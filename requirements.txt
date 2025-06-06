@@ -2,7 +2,7 @@ streamlit
 pandas
 requests
 openai
-matplotlib.pyplot
+matplotlib
 io
 contextlib
 os
