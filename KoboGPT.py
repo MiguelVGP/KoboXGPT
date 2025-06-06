@@ -305,17 +305,18 @@ if token and form_id:
                         client = OpenAI(api_key=openai_api_key)
                         
                         response = client.chat.completions.create(
-                            model=modelo_openai,
-                            temperature=0,
-                            messages=st.session_state.chat_history,
-                            max_tokens=1500,
-                        )
-                        
-                        chat = response.choices[0].message.content
+                        model=modelo_openai,
+                        temperature=0,
+                        messages=st.session_state.chat_history,
+                        max_tokens=1500,
+                    )
+                    
+                    chat = response.choices[0].message.content
+                    
+                    resposta = chat  # ✅ Correção aqui
+                    st.session_state.chat_history.append({"role": "assistant", "content": resposta})
+                    st.markdown(resposta)
 
-                        resposta = chat.choices[0].message.content
-                        st.session_state.chat_history.append({"role": "assistant", "content": resposta})
-                        st.markdown(resposta)
 
             if len(st.session_state.chat_history) > 1:
                 with st.expander("📜 Ver histórico da conversa"):
