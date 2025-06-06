@@ -300,12 +300,18 @@ if token and form_id:
                             "content": pergunta_formatada
                         })
 
-                        chat = openai.ChatCompletion.create(
+                        from openai import OpenAI
+
+                        client = OpenAI(api_key=st.secrets["openai_api_key"])  # ou use variável de ambiente
+                        
+                        response = client.chat.completions.create(
                             model=modelo_openai,
                             temperature=0,
                             messages=st.session_state.chat_history,
-                            max_tokens=1500
+                            max_tokens=1500,
                         )
+                        
+                        chat = response.choices[0].message.content
 
                         resposta = chat.choices[0].message.content
                         st.session_state.chat_history.append({"role": "assistant", "content": resposta})
