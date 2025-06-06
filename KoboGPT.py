@@ -106,7 +106,7 @@ if token and form_id:
                 colunas_data.append(col)
             except:
                 try:
-                    pd.to_datetime(df[col], errors='raise')
+                    pd.to_datetime(df[col], errors='raise', utc=True)
                     colunas_data.append(col)
                 except:
                     continue
@@ -302,7 +302,7 @@ if token and form_id:
 
                         from openai import OpenAI
 
-                        client = OpenAI(api_key=st.secrets["openai_api_key"])  # ou use variável de ambiente
+                        client = OpenAI(api_key=openai_api_key)
                         
                         response = client.chat.completions.create(
                             model=modelo_openai,
