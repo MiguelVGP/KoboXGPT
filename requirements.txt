@@ -3,6 +3,4 @@ pandas
 requests
 openai
 matplotlib
-os
 unicodedata
-re
