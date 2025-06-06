@@ -1,7 +1,6 @@
 streamlit
 pandas
 requests
-json
 openai
 matplotlib.pyplot
 io
