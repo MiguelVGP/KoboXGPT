@@ -38,7 +38,7 @@ if "chat_history" not in st.session_state:
         {
             "role": "system",
             "content": (
-                f"O utilizador chama-se {st.session_state.nome_utilizador}. "
+                #f"O utilizador chama-se {st.session_state.nome_utilizador}. "
                 "Vais analisar dados em CSV. Responde em português de forma clara. "
                 "Usa **exclusivamente** os nomes das colunas fornecidas, tal como aparecem. "
                 "Nunca inventes nomes de colunas. "
