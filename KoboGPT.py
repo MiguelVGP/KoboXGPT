@@ -22,10 +22,10 @@ st.set_page_config(page_title="Kobo Dashboard + ChatGPT", layout="wide")
 
 st.title("📊 KoboToolbox Data Analyzer + ChatGPT 📡")
 
-if "nome_utilizador" not in st.session_state:
-    st.session_state.nome_utilizador = st.text_input("👤 Introduza o seu nome para começar:")
-    if not st.session_state.nome_utilizador:
-        st.stop()
+#if "nome_utilizador" not in st.session_state:
+    #st.session_state.nome_utilizador = st.text_input("👤 Introduza o seu nome para começar:")
+   # if not st.session_state.nome_utilizador:
+        #st.stop()
 
 token = st.sidebar.text_input("🔐 API Token do KoboToolbox", type="password")
 form_id = st.sidebar.text_input("🆔 UID do Formulário KoboToolbox (ex: aAQqHmPbMUaLAehcFQNpTi)")
